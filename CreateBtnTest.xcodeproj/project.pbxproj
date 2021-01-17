@@ -24,6 +24,8 @@
 		39E2CF3025AF116800BD3593 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2CF2F25AF116800BD3593 /* ProjectModel.swift */; };
 		39E2CF3225AF16D200BD3593 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2CF3125AF16D200BD3593 /* TimeModel.swift */; };
 		39E2CF3425B0A7E600BD3593 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39E2CF3325B0A7E600BD3593 /* GoogleService-Info.plist */; };
+		39E2CF5A25B316EF00BD3593 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2CF5925B316EF00BD3593 /* GraphViewController.swift */; };
+		39E2CF5C25B31D9A00BD3593 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2CF5B25B31D9A00BD3593 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		39E2CF2F25AF116800BD3593 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		39E2CF3125AF16D200BD3593 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
 		39E2CF3325B0A7E600BD3593 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		39E2CF5925B316EF00BD3593 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		39E2CF5B25B31D9A00BD3593 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B80C0959EB331F99BA3CDA5E /* Pods_CreateBtnTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreateBtnTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD59628849EFF3F6C202FCF2 /* Pods-CreateBtnTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreateBtnTest.debug.xcconfig"; path = "Target Support Files/Pods-CreateBtnTest/Pods-CreateBtnTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,35 +91,36 @@
 				39CA022925AD7CCC001E930A /* SceneDelegate.swift */,
 				39E2CF2E25AF115A00BD3593 /* Model */,
 				39E2CF2925AEEEFB00BD3593 /* Extension */,
-				39E2CF2525AEE88E00BD3593 /* SignUp */,
-				39CA023D25AD7F73001E930A /* ViewControllers */,
+				39E2CF5725B3165B00BD3593 /* HomeViewController */,
+				39E2CF2525AEE88E00BD3593 /* SignUpViewController */,
+				39CA023D25AD7F73001E930A /* TimeViewControllers */,
+				39E2CF5825B316C900BD3593 /* GraphViewControllers */,
 				39E2CF2825AEE8BC00BD3593 /* StoryBoard */,
-				39CA023025AD7CCD001E930A /* Assets.xcassets */,
 				39CA023225AD7CCD001E930A /* LaunchScreen.storyboard */,
+				39CA023025AD7CCD001E930A /* Assets.xcassets */,
 				39CA023525AD7CCD001E930A /* Info.plist */,
 				39E2CF3325B0A7E600BD3593 /* GoogleService-Info.plist */,
 			);
 			path = CreateBtnTest;
 			sourceTree = "<group>";
 		};
-		39CA023D25AD7F73001E930A /* ViewControllers */ = {
+		39CA023D25AD7F73001E930A /* TimeViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				39CA022B25AD7CCC001E930A /* HomeViewController.swift */,
 				39CA023B25AD7F6F001E930A /* CreateViewController.swift */,
 				39CA023E25AD9385001E930A /* ProjectViewController.swift */,
 				39CA024025ADB6CA001E930A /* SettingTimeViewController.swift */,
 				39CA024225ADB6DC001E930A /* TimerViewController.swift */,
 			);
-			path = ViewControllers;
+			path = TimeViewControllers;
 			sourceTree = "<group>";
 		};
-		39E2CF2525AEE88E00BD3593 /* SignUp */ = {
+		39E2CF2525AEE88E00BD3593 /* SignUpViewController */ = {
 			isa = PBXGroup;
 			children = (
 				39E2CF2625AEE8A300BD3593 /* SignUpViewController.swift */,
 			);
-			path = SignUp;
+			path = SignUpViewController;
 			sourceTree = "<group>";
 		};
 		39E2CF2825AEE8BC00BD3593 /* StoryBoard */ = {
@@ -142,6 +147,23 @@
 				39E2CF3125AF16D200BD3593 /* TimeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		39E2CF5725B3165B00BD3593 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				39CA022B25AD7CCC001E930A /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		39E2CF5825B316C900BD3593 /* GraphViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				39E2CF5B25B31D9A00BD3593 /* ReportViewController.swift */,
+				39E2CF5925B316EF00BD3593 /* GraphViewController.swift */,
+			);
+			path = GraphViewControllers;
 			sourceTree = "<group>";
 		};
 		89A082135441865B18ABE9F0 /* Frameworks */ = {
@@ -279,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39CA024125ADB6CA001E930A /* SettingTimeViewController.swift in Sources */,
+				39E2CF5C25B31D9A00BD3593 /* ReportViewController.swift in Sources */,
 				39CA023F25AD9385001E930A /* ProjectViewController.swift in Sources */,
 				39E2CF2725AEE8A300BD3593 /* SignUpViewController.swift in Sources */,
 				39CA023C25AD7F6F001E930A /* CreateViewController.swift in Sources */,
@@ -287,6 +310,7 @@
 				39CA024325ADB6DC001E930A /* TimerViewController.swift in Sources */,
 				39CA022C25AD7CCC001E930A /* HomeViewController.swift in Sources */,
 				39CA022825AD7CCC001E930A /* AppDelegate.swift in Sources */,
+				39E2CF5A25B316EF00BD3593 /* GraphViewController.swift in Sources */,
 				39E2CF3225AF16D200BD3593 /* TimeModel.swift in Sources */,
 				39CA022A25AD7CCC001E930A /* SceneDelegate.swift in Sources */,
 			);
