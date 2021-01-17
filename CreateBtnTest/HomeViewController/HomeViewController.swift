@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
         
         setUpView()
         confirmLoggedInUser()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         fetchProjectFromFireStore()
     }
     
@@ -27,7 +31,7 @@ class HomeViewController: UIViewController {
         navigationItem.title = "タイマー"
         
         let logoutBarButton = UIBarButtonItem(title: "ログアウト", style: .plain, target: self, action: #selector(tappedNavLeftBarButton))
-        navigationItem.rightBarButtonItem = logoutBarButton
+        navigationItem.leftBarButtonItem = logoutBarButton
 
     }
     
@@ -56,6 +60,8 @@ class HomeViewController: UIViewController {
     
     // CreateViewControllerで追加されたtitleを配列に追加後UserDefaultsに格納
     private func fetchProjectFromFireStore() {
+        titleData.removeAll()
+        proTableView.reloadData()
         guard let userId = Auth.auth().currentUser?.uid else { return }
         print(userId)
         firebase.collection("user").document(userId).collection("project").addSnapshotListener { (snapshots, err) in

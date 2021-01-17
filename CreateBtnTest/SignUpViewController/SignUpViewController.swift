@@ -9,6 +9,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var createUserButton: UIButton!
     @IBOutlet weak var showErrorLabel: UILabel!
+    @IBOutlet weak var alreadyHaveAccountButton: UIButton!
     
     private var firebase = Firestore.firestore()
     
@@ -17,6 +18,13 @@ class SignUpViewController: UIViewController {
 
         setUpView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     private func setUpView() {
         createUserButton.layer.cornerRadius = 10
         nameTextField.delegate = self
@@ -25,6 +33,13 @@ class SignUpViewController: UIViewController {
         createUserButton.isEnabled = false
         createUserButton.backgroundColor = .gray
         createUserButton.addTarget(self, action: #selector(tappedCreateUserButton), for: .touchUpInside)
+        alreadyHaveAccountButton.addTarget(self, action: #selector(tappedAlreadyHaveAccountButton), for: .touchUpInside)
+    }
+    
+    @objc private func tappedAlreadyHaveAccountButton() {
+        let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        self.navigationController?.pushViewController(loginViewController, animated: true)
     }
     
     @objc private func tappedCreateUserButton() {
@@ -72,7 +87,7 @@ extension SignUpViewController: UITextFieldDelegate {
         if nameIsEmpty || mailIsEmpty || passIsEmpty {
             createUserButton.isEnabled = false
             createUserButton.backgroundColor = .gray
-            showErrorLabel.text = "入力されていません"
+            showErrorLabel.text = "入力されていない項目があります"
         } else {
             createUserButton.isEnabled = true
             createUserButton.backgroundColor = .rgb(red: 242, green: 213, blue: 224)

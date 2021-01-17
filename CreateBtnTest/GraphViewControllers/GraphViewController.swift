@@ -127,7 +127,7 @@ extension GraphViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = graphTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GraphTableViewCell
         let time: TimeModel
         time = projectTime[indexPath.row]
-        cell.graphLabel.text = "\(time.workTime!)分×\(time.restTime!)分　\( time.repeatTime!)回"
+        cell.graphLabel.text = "\(time.workTime!)分×\(time.restTime!)分　\(time.repeatTime!)回"
         return cell
     }
     
