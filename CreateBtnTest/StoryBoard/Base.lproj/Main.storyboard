@@ -240,24 +240,72 @@
                                     <constraint firstAttribute="width" secondItem="DYv-IH-cG1" secondAttribute="height" multiplier="1:1" id="zWB-hO-ShR"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A5N-1f-07D">
+                                <rect key="frame" x="0.0" y="552" width="414" height="241"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="50" id="sRt-0A-2wM" customClass="GraphTableViewCell" customModule="CreateBtnTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sRt-0A-2wM" id="zon-jS-kue">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5e-fW-1gB">
+                                                    <rect key="frame" x="10" y="5" width="394" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0m-3x-Hjd">
+                                                            <rect key="frame" x="20" y="11.5" width="354" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.94901960780000005" green="0.83921568629999999" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="S0m-3x-Hjd" firstAttribute="centerY" secondItem="f5e-fW-1gB" secondAttribute="centerY" id="HwF-GV-XlF"/>
+                                                        <constraint firstItem="S0m-3x-Hjd" firstAttribute="leading" secondItem="f5e-fW-1gB" secondAttribute="leading" constant="20" id="VUA-cF-8kJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="S0m-3x-Hjd" secondAttribute="trailing" constant="20" id="d93-9d-OTw"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="f5e-fW-1gB" firstAttribute="leading" secondItem="zon-jS-kue" secondAttribute="leading" constant="10" id="WL0-Ov-yli"/>
+                                                <constraint firstAttribute="trailing" secondItem="f5e-fW-1gB" secondAttribute="trailing" constant="10" id="aCx-aH-4bT"/>
+                                                <constraint firstItem="f5e-fW-1gB" firstAttribute="top" secondItem="zon-jS-kue" secondAttribute="top" constant="5" id="iwr-yZ-LNN"/>
+                                                <constraint firstAttribute="bottom" secondItem="f5e-fW-1gB" secondAttribute="bottom" constant="5" id="vUo-0G-R27"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="graphLabel" destination="S0m-3x-Hjd" id="hO7-co-Ovd"/>
+                                            <outlet property="graphView" destination="f5e-fW-1gB" id="bnX-wu-uMv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="aSj-w4-z0d" firstAttribute="trailing" secondItem="A5N-1f-07D" secondAttribute="trailing" id="7if-Ps-b1n"/>
                             <constraint firstItem="aSj-w4-z0d" firstAttribute="trailing" secondItem="DYv-IH-cG1" secondAttribute="trailing" id="Fs9-O9-dPc"/>
                             <constraint firstItem="DYv-IH-cG1" firstAttribute="leading" secondItem="aSj-w4-z0d" secondAttribute="leading" id="Gnp-nG-28R"/>
                             <constraint firstItem="DYv-IH-cG1" firstAttribute="centerX" secondItem="9bI-Su-Owc" secondAttribute="centerX" id="k0e-PG-dyY"/>
+                            <constraint firstItem="A5N-1f-07D" firstAttribute="top" secondItem="DYv-IH-cG1" secondAttribute="bottom" id="n08-hc-pqc"/>
+                            <constraint firstItem="A5N-1f-07D" firstAttribute="leading" secondItem="aSj-w4-z0d" secondAttribute="leading" id="nHi-ef-c3p"/>
                             <constraint firstItem="DYv-IH-cG1" firstAttribute="top" secondItem="aSj-w4-z0d" secondAttribute="top" constant="50" id="ooe-L4-2yp"/>
+                            <constraint firstItem="aSj-w4-z0d" firstAttribute="bottom" secondItem="A5N-1f-07D" secondAttribute="bottom" constant="20" id="u2Z-Fc-vWC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aSj-w4-z0d"/>
                     </view>
                     <navigationItem key="navigationItem" id="zJ1-Rm-yqo"/>
                     <connections>
                         <outlet property="graphChartView" destination="DYv-IH-cG1" id="n9Q-y3-LtG"/>
+                        <outlet property="graphTableView" destination="A5N-1f-07D" id="jOg-ve-l4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPh-j7-Doq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4568" y="1627"/>
+            <point key="canvasLocation" x="4566.666666666667" y="1626.5625"/>
         </scene>
         <!--Project View Controller-->
         <scene sceneID="UXh-Hj-kOy">
