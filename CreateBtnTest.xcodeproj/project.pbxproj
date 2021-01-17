@@ -26,6 +26,8 @@
 		39E2CF3425B0A7E600BD3593 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39E2CF3325B0A7E600BD3593 /* GoogleService-Info.plist */; };
 		39E2CF5A25B316EF00BD3593 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2CF5925B316EF00BD3593 /* GraphViewController.swift */; };
 		39E2CF5C25B31D9A00BD3593 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2CF5B25B31D9A00BD3593 /* ReportViewController.swift */; };
+		39E2CF5E25B3FF8C00BD3593 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E2CF5D25B3FF8C00BD3593 /* LoginView.storyboard */; };
+		39E2CF6025B3FFB200BD3593 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2CF5F25B3FFB200BD3593 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		39E2CF3325B0A7E600BD3593 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39E2CF5925B316EF00BD3593 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		39E2CF5B25B31D9A00BD3593 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		39E2CF5D25B3FF8C00BD3593 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
+		39E2CF5F25B3FFB200BD3593 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B80C0959EB331F99BA3CDA5E /* Pods_CreateBtnTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreateBtnTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD59628849EFF3F6C202FCF2 /* Pods-CreateBtnTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreateBtnTest.debug.xcconfig"; path = "Target Support Files/Pods-CreateBtnTest/Pods-CreateBtnTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				39E2CF2625AEE8A300BD3593 /* SignUpViewController.swift */,
+				39E2CF5F25B3FFB200BD3593 /* LoginViewController.swift */,
 			);
 			path = SignUpViewController;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				39CA022D25AD7CCC001E930A /* Main.storyboard */,
 				39E2CF2125AED78700BD3593 /* SignUpView.storyboard */,
+				39E2CF5D25B3FF8C00BD3593 /* LoginView.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 				39E2CF3425B0A7E600BD3593 /* GoogleService-Info.plist in Resources */,
 				39CA023125AD7CCD001E930A /* Assets.xcassets in Resources */,
 				39CA022F25AD7CCC001E930A /* Main.storyboard in Resources */,
+				39E2CF5E25B3FF8C00BD3593 /* LoginView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E2CF6025B3FFB200BD3593 /* LoginViewController.swift in Sources */,
 				39CA024125ADB6CA001E930A /* SettingTimeViewController.swift in Sources */,
 				39E2CF5C25B31D9A00BD3593 /* ReportViewController.swift in Sources */,
 				39CA023F25AD9385001E930A /* ProjectViewController.swift in Sources */,

@@ -14,6 +14,10 @@ class ReportViewController: UIViewController {
         super.viewDidLoad()
 
         setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchProjectFromFireStore()
     }
 
@@ -26,6 +30,8 @@ class ReportViewController: UIViewController {
     
     // CreateViewControllerで追加されたtitleを配列に追加後UserDefaultsに格納
     private func fetchProjectFromFireStore() {
+        titleData.removeAll()
+        reportTableView.reloadData()
         guard let userId = Auth.auth().currentUser?.uid else { return }
         firebase.collection("user").document(userId).collection("project").addSnapshotListener { (snapshots, err) in
             if err != nil {
