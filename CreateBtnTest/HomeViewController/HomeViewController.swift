@@ -16,11 +16,11 @@ class HomeViewController: UIViewController {
         
         setUpView()
         confirmLoggedInUser()
+        fetchProjectFromFireStore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchProjectFromFireStore()
     }
     
     private func setUpView() {
@@ -124,17 +124,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     // TableViewのCellを消す
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
-    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            titleData.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-//        }
-//    }
+    // スワイプしたセルを削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let pro: ProjectModel
+        pro = titleData[indexPath.row]
+        guard let documentId = pro.projectId else { return }
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            titleData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            firebase.collection("user").document(userId).collection("project").document(documentId).delete()
+        }
+    }
 }
 
 class ProjectTableViewCell: UITableViewCell {
