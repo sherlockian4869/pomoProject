@@ -105,6 +105,24 @@ extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
             postTime.removeAll()
         }
     }
+    
+    // TableViewのCellを消す
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    // スワイプしたセルを削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let time: TimeModel
+        time = projectTime[indexPath.row]
+        guard let documentId = time.timeId else { return }
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            projectTime.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            firebase.collection("user").document(userId).collection("project").document(projectId).collection("timer").document(documentId).delete()
+        }
+    }
 }
 
 class TimeTableViewCell: UITableViewCell {
